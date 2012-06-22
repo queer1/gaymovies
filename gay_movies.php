@@ -70,7 +70,7 @@ share your own movie ratings and comments with your Facebook friends;
 quickly find more information via IMDB and RottenTomato links.
 SITE_DESC;
 
-  $new_icon = "images/icons/new_03.gif";
+  $new_icon = "media/new_03.gif";
   $new_icon_width = 50;
   $new_icon_height = 50;
 
@@ -1497,9 +1497,9 @@ function get_current_recommendation_image()
     }
   }
 
-  if (is_file("images/$art"))
+  if (is_file("images/original/$art"))
   {
-    $image = "images/$art";
+    $image = "images/original/$art";
     list($width, $height, $type, $attr) = getimagesize($image);
     if ($height > 500)
     {
@@ -1583,7 +1583,7 @@ print("    <div class=\"col2\">\n");
       && ($date_integer > $now) )
       break;
 
-    $has_art = is_file("images/$art");
+    $has_art = is_file("images/original/$art");
     if ($has_art)
       $image = get_image($art, $icon_height);
 
@@ -1633,7 +1633,7 @@ function display_current_recommendation($current_recommendation, $selected_row)
   $date_integer = strtotime($selected_row['date_recommended']);
   $date_string = date('F j', $date_integer);
 
-  $has_art = is_file("images/$art");
+  $has_art = is_file("images/original/$art");
   if ($has_art)
     $image = get_image($art, $icon_height);
 
@@ -1673,7 +1673,7 @@ print("</div>\n");
 
 function update_recommendation_link($art)
 {
-  $link = "images/recommended_movie.jpg";
+  $link = "images/original/recommended_movie.jpg";
   $image = get_image($art, 400);
   $target = "../$image";
 
@@ -1692,7 +1692,7 @@ function display_amazon_buy_button($dvd_url, $bluray_url)
   if (isset($dvd_url) && $dvd_url != "")
   {
     display_link("$dvd_url", "Buy DVD on Amazon.com", 
-                 "/images/icons/amazon_120x42_gold.gif");
+                 "/media/amazon_120x42_gold.gif");
   }
 }
 
@@ -1701,7 +1701,7 @@ function display_scarecrow_button($url)
   if (isset($url) && $url != "")
   {
     display_link("$url", "Available at Scarecrow Video, Seattle",
-                 "/images/icons/scarecrow_logo.jpg");
+                 "/media/scarecrow_logo.jpg");
   }
 }
 
@@ -1714,7 +1714,7 @@ function display_siff_button($url, $small=0)
     else
       display_link("$url", 
             "Official Selection, 2011 Seattle International Film Festival",
-            "/images/icons/SIFF-Fest_RGB.jpg");
+            "/media/SIFF-Fest_RGB.jpg");
   }
 }
 
@@ -1857,7 +1857,7 @@ function display_menu()
     print("<div class=\"lefty\">");
     display_link("http://www.siff.net/festival/index.aspx",
        "Now featuring films from 2011 Seattle International Film Festival, May 19 - June 12",
-       "/images/icons/SIFF-Fest_RGB.jpg");
+       "/media/SIFF-Fest_RGB.jpg");
     print("</div>\n");
     print("\n");
 
@@ -2079,7 +2079,7 @@ function display_login_menu()
       print("</div>\n");
 
       $logoutUrl = $facebook->getLogoutUrl();
-      display_link("$logoutUrl", "logout", "images/fblogout.gif");
+      display_link("$logoutUrl", "logout", "media/fblogout.gif");
       print("<br/>\n");
 
       return(false);  // Don't want to tack on anything else
@@ -2608,7 +2608,7 @@ function display_movie_list_link($row, $noart)
   if (isset($year) && $year > 0)
     $title   .= " ($year)";
 
-  $has_art = is_file("images/$art");
+  $has_art = is_file("images/original/$art");
   if ($has_art && ($g_icon_height > 0))
     $image = get_image($art, $g_icon_height);
   //else
@@ -3129,7 +3129,7 @@ function update_movie_info($entry)
   }
 
   // Expand the filename
-  $fname = "images/$art_fname";
+  $fname = "images/original/$art_fname";
 
   // Update database, storing target filename for art
   // Allow for apostrophes in title by using double-quotes!
@@ -3613,7 +3613,7 @@ function redirect_to_movie_edit($movie_id=NULL)
 function save_image($remote_url, $fname)
 {
   // Save Original image
-  $path = "images/$fname";
+  $path = "images/original/$fname";
   saveit($remote_url, $path);
 
   // Remove any previously derived versions of this image
@@ -3660,7 +3660,7 @@ function get_image($name, $target_height)
 {
   global $debug;
 
-  $src_fname = "images/$name";
+  $src_fname = "images/original/$name";
 
   list($width, $height, $type, $attr) = getimagesize($src_fname);
   if ($height <= $target_height)
@@ -3760,7 +3760,7 @@ function display_movie_info($movie_id)
   $amazon_dvd_url = $row['amazon_dvd_url'];
   $amazon_bluray_url = $row['amazon_bluray_url'];
 
-  if (is_file("images/$art"))
+  if (is_file("images/original/$art"))
     $image = get_image($art, $g_cover_height);
   else
     $image = get_image("dvd_logo.jpg", $g_cover_height);
@@ -3991,7 +3991,7 @@ function rate_movie($movie_id)
   $art    = $row['art'];
   $title  = $row['title'];
 
-  if (is_file("images/$art"))
+  if (is_file("images/original/$art"))
     $image = get_image($art, $g_cover_height);
   else
     $image = get_image("dvd_logo.jpg", $g_cover_height);
@@ -4064,7 +4064,7 @@ function recommend_movie($movie_id)
     $art   = $row['art'];
     $title = $row['title'];
 
-    if (is_file("images/$art"))
+    if (is_file("images/original/$art"))
       $image = get_image($art, $g_cover_height);
     else
       $image = get_image("dvd_logo.jpg", $g_cover_height);
@@ -4146,7 +4146,7 @@ function edit_movie($movie_id=NULL)
     $art    = $row['art'];
     $title  = $row['title'];
 
-    if (is_file("images/$art"))
+    if (is_file("images/original/$art"))
       $image = get_image($art, $g_cover_height);
     else
       $image = get_image("dvd_logo.jpg", $g_cover_height);
@@ -4223,7 +4223,7 @@ function confirm_delete($movie_id)
 
     $art    = $row['art'];
     $title  = $row['title'];
-    if (is_file("images/$art"))
+    if (is_file("images/original/$art"))
       $image = get_image($art, $g_cover_height);
     else
       $image = get_image("dvd_logo.jpg", $g_cover_height);
