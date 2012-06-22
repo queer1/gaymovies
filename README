@@ -1,0 +1,14 @@
+This is a PHP-based website which allows users to share comments and ratings on 
+gay-themed movies.
+
+In particular, the following features are supported:
+
+ - login via Facebook so that users can share with their FB friends
+ - Indicate movies that you've seen, rate them, and provide short 
+   comments on them.
+ - Go to IMDB and Amazon links for the movies
+ - Sort movies by various ratings including selected FB friend, your ranking,
+   IMDB, flixster and a combined rating.
+
+
+
