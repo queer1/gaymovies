@@ -1,0 +1,57 @@
+
+                Towards a more perfect rating system
+                              ------
+  Copyright (c) 2011 Durwood Gafford - All Rights Reserved
+
+Traditional moving rating systems (e.g. 1-to-10 stars) are problematic in at 
+least two areas:
+
+  1. They are skewed toward the high end because viewers typically self-select
+     "good" movies prior to viewing them (i.e. they seldom watch or rank really
+     bad movies.)
+  2. It is difficult for a user to be consistent in their rankings because of
+     the rather arbirtrary nature of assigning a number ranking.
+
+The ELO rating algorithm (used for chess rankings and made famous by 
+Zuckerberg's facemash.com) could overcome both of these deficiencies by 
+providing a side-by-side comparison of two movies with the user merely 
+selecting which movie is the best of the two. Here's a general idea of how
+I would apply it for movie rankings:
+
+ - Users rate movies head-to-head to determine their own personal rating
+ - Their head-to-head ratings also help determine a global rating
+ - Use ratings to define ranking of movies seen
+ - Use ratings to determine a viewer profile and movie recommendation from the
+   list of movies not-seen (Machine learning; What should I watch tonight?)
+ - Further refine viewer profile based on genre, friends?
+ - Further application areas to consider: global movie ratings, 
+   special movie classes (e.g. gay movies), specific classes (film festivals), 
+   global book ratings.
+
+Rating system impementation...
+
+ - Weighted random selection of two movies to present for head-to-head rating
+ - Need to decide if ties are allowed in head-to-head rating
+ - Need to be able to 'skip' rating two movies so as not to poison the rating 
+   by forcing ratings when the user doesn't have a strong opinion
+ - New movies are given a provisional rating based on IMDB/Rotten/Global
+ - Rating of provisionally rated movies will only effect their score, not the
+   score of head-to-head non-provisional movies. (i.e. don't give any credence
+   to provisionally rated movies until there is some rating history)
+ - Movies which are both provisional will have dual effect
+ - Determination as to when to move a film from provisional to established
+   will be based on how many established movies it's been rated against.
+
+Refinement of rating algorithm...
+
+ - Do some initial studies to validate rating algorighm
+ - Start with an assumed "correct" rating and measure how successful the
+   algorithm is in reproducing that correct rating in the fewest number of
+   selections
+ - Study the impact of having a small number of movies vs. a ton of them.
+
+-Durwood Gafford
+
+
+
+

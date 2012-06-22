@@ -1,0 +1,18 @@
+
+This is a list of suggestions for the website.
+It can be updated via the "website suggestions" link.
+Your login name will be automatically pre-pended.
+
+DONE: Add Support for multiple users
+DONE: Show current rating info on ratings edit screens of individual movies (like it's shown on the browse screen)
+DONE: Provide better separation of checkboxes or rating update page
+DONE: Fix formating of 'list' mode
+DONE: Add year to hover-text
+DONE: remove 'next' and 'prev' buttons from 'add_new_movie' option
+durwood: add genre support?
+durwood: move combo rating to its own table so updating it doesn't update movie table
+durwood: BUG: removing rating from film with 'NotSeenRated' special filter on causes problems
+durwood: BUG: Fix layout problems with browse/rate/edit screens on various browsers.
+
+
+durwood: do it

@@ -1,0 +1,4 @@
+use gay_movies;
+drop table if exists movie;
+drop table if exists user;
+

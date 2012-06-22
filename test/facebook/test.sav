@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:fb="http://www.facebook.com/2008/fbml">
+ 
+  <script type="text/javascript" src="gay_movies.js"></script>
+  <script type="text/javascript" src="dropdowntabs.js"></script>
+  <style type="text/css">
+  @import "bluetabs.css";
+  @import "my_debug.css";
+ 
+ 
+	/* column container */
+	.colmask {
+		position:relative;	/* This fixes the IE7 overflow hidden bug */
+		clear:both;
+		float:left;
+		width:100%;			/* width of whole page */
+		overflow:hidden;		/* This chops off any overhanging divs */
+	}
+	/* common column settings */
+	.colright,
+	.colmid,
+	.colleft {
+		float:left;
+		width:100%;
+		position:relative;
+	}
+	.col1,
+	.col2,
+	.col3 {
+		float:left;
+		position:relative;
+		padding:0 0 1em 0;
+		overflow:hidden;
+	}
+	/* 2 Column (left menu) settings */
+	.leftmenu {
+		background:#fff;		/* right column background colour */
+	}
+	.leftmenu .colleft {
+		right:75%;			/* right column width */
+		background:#ffffff;	/* left column background colour */
+	}
+	.leftmenu .col1 {
+		width:71%;			/* right column content width */
+		left:102%;			/* 100% plus left column left padding */
+	}
+	.leftmenu .col2 {
+		width:21%;			/* left column content width (column width minus left and right padding) */
+		left:6%;			/* (right column left and right padding) plus (left column left padding) */
+	}
+ 
+  </style>
+    
+<head>
+ 
+<title>The Gay Movie List</title>
+<meta name="title" content="The Gay Movie List" />
+<meta name="description" content="Your first stop when looking for a gay movie. 
+See this week's recommendation; 
+share your own movie ratings and comments with your Facebook friends; 
+quickly find more information via IMDB and RottenTomato links." />
+<link rel="image_src" href="http://thegaymovielist.com/images/love_to_hide_dvd.jpg" />
+<meta name="keywords" content="gay,movie,gay movie list,rate gay movies,gay movie recommendation,best gay movies,favorite gay movies" />
+<meta name="google-site-verification" content="Bwe0qfR_J4YTS489d5PHJkrG1xpydEh1jop8uBHWcwo" />
+<meta property="og:title" content="Adonis Factor, The" />
+<meta property="og:type" content="movie" />
+<meta property="og:url" content="http://thegaymovielist.com/?movie_id=293" />
+<meta property="og:image" content="http://thegaymovielist.com//images/400/adonis_factor_dvd.jpg" />
+<meta property="og:site_name" content="The Gay Movie List" />
+<meta property="fb:app_id" content="122327374503892" />
+<meta property="og:description" content="Your first stop when looking for a gay movie. 
+See this week's recommendation; 
+share your own movie ratings and comments with your Facebook friends; 
+quickly find more information via IMDB and RottenTomato links." />
+ 
+</head>
+ 
+<body>
+ 
+<div id="fb-root"></div>
+<script> 
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId : '122327374503892',
+      session : {"access_token":"122327374503892|2.l16Ta7nxuK7k9hERuWCLkA__.3600.1299146400-1184847479|wjnKGZDWqEnxPIyNHf5m9kyeg48","base_domain":"thegaymovielist.com","expires":"1299146400","secret":"oh6k9HlZwJ1mPO9IP4bllg__","session_key":"2.l16Ta7nxuK7k9hERuWCLkA__.3600.1299146400-1184847479","sig":"2cde14a0186030e4bf65473fe492d707","uid":"1184847479"},
+      status : true, // check login status
+      cookie : true, // enable cookies to allow the server to access the session
+      xfbml : true // parse XFBML
+    });
+ 
+    // whenever the user logs in, we refresh the page
+    FB.Event.subscribe('auth.login', function() {
+      window.location.reload();
+    });
+  };
+ 
+  (function() {
+    var e = document.createElement('script');
+    e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+    e.async = true;
+    document.getElementById('fb-root').appendChild(e);
+  }());
+</script>
+ 
+<div id="container">
+ 
+<div id="anchor_top"></div>
+<a href="#anchor_top" accesskey="t"</a>
+<a href="/" accesskey="h"</a>
+ 
+<div class="centered">
+<br/>
+</div>
+ 
+<div class="movie_cover large">
+<a href="/new_gay_movies.php?movie_id=5">
+<img src="images/400/adonis_factor_dvd.jpg" border="0" alt="Adonis Factor, The - Click for Next Movie" title="Adonis Factor, The - Click for Next Movie"/>
+</a>
+<br/>
+<a href="http://www.amazon.com/gp/product/B00400L8XO?ie=UTF8&tag=gaymovielist-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=B00400L8XO">
+<img src="/images/icons/amazon_120x42_gold.gif" border="0" alt="Buy DVD on Amazon.com" title="Buy DVD on Amazon.com"/>
+</a>
+<fb:like layout="button_count" href="http://thegaymovielist.com/?movie_id=293" width="90" height=height"/>
+</div>
+ 
+<div id="anchor_info_controls"class="main_column">
+ 
+<form method="post" action="/new_gay_movies.php" name="movie_info">
+<input type="hidden" name="movie_id" value="293"/>
+<p>
+<input type="submit" name="prev_movie_info" value="Prev"/>
+<input type="submit" name="cancel_movie_info" value="Return To List"/>
+<input type="submit" name="next_movie_info" value="Next"/>
+</p>
+</form>
+ 
+<div class="movie_title"><b>
+  <br/>
+  <b>Adonis Factor, The</b> (2010)<br/>
+  <b></b><br/>
+  <br/>
+  Combo: 4.8
+  <br/>
+<a href="http://www.imdb.com/title/tt1563778/combined">IMDB: 5.0</a>
+  <br/>
+  TomatoMeter: --
+  <br/>
+  <br/>
+DurwoodGafford has not seen.<br/>
+ has not seen.<br/>
+  <br/>
+</div>
+ 
+</div>
+ 
+ 
+<div class="push"></div>
+ 
+</div>
+ 
+<div class="footer">
+<p>Copyright &#169 2011 Durwood Gafford. All Rights Reserved. --
+<a href="javascript:TOSPopup('/privacy.html')">View Privacy Statement</a> --
+<a href="javascript:TOSPopup('/tos.html')">View Terms of Service</a>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="8E2HJXQK2FP7L">
+<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+ 
+</p>
+</div>
+ 
+</body>
+</html>
+ 
+ 
+ 
+
+

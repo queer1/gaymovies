@@ -1,0 +1,68 @@
+
+                  Design Goals for GayMovieShare
+                            ------
+  Copyright (c) 2011 Durwood Gafford - All Rights Reserved
+
+Summary of Design Goals:
+
+- Support login via Facebook (ease of use, socially aware website)
+- Allow users to "like" the site as well as individual movies on Facebook
+- Allow users to rate movies using 10-star system (SEE DISCUSSION OF RATIONALE
+  AT END OF DOCUMENT)
+- At any given time, Allow users to view one selected FB friend's ratings and 
+  compare with their own.
+- Support short user comments about movies in lieu of full reviews (less 
+  intimidating to write)
+- Allow users to classify movies based (seen, not seen, want to see, etc.)
+- Support "Combo Rating" which merges external ratings (e.g. IMDB) with user
+  and friend ratings. Use normalizatin and user/friend weighting when 
+  determining this combo rating.
+- Provide weekly movie recommendations (make these timely i.e. have them
+  consider DVD releases, Gay Pride, National Coming Out Day, etc.)
+- Provide external links for quick additional information (IMDB, 
+  RottenTomatos, etc.)
+- Provide highly visible button links to certain sites ("Buy from Amazon",
+  Scarecrow)
+- Support ability to add special categories of films (e.g. SIFF movies)
+- Provide a "tips" line to help new users navigate the site
+- Use menus and tabs for navigation of the site (intuitive, hides site
+  complexity)
+- Support (but discourage!) non-facebook login
+- Ensure site is useful even for those that don't want to join as a user.
+- Support various classes of users (admin, regular, non-facebook)
+- Provide FAQ, Terms of Service, and Privacy Statement.
+
+Admin-only Features:
+
+- Make it as easy as possible to add new movies
+  1. Add title to simple form
+  2. "submit" brings up full form with links which launch search on IMDB, 
+     Amazon, etc.
+  3. "Drag / Drop" url for external rankings and movie thumbnail
+- Provide filters for listing movies which are missing certain pieces of 
+  information (e.g. "missing IMDB rating")
+
+Future Work:
+
+- Provide for automatic, periodic updating of external ratings (i.e. no manual
+  intervention by administrator)
+- Add support for ELO ranking algorithm!
+
+Discussion of movie rankings; Why I chose 10-star rating:
+---------------------------------------------------------
+
+One problem with the rating of movies by USERS (as opposed to critics), is
+that users tend to self-select only "good" movies to rate. Folks rarely 
+watch movies that are bad (less than 5 out of 10) because they do enough
+research BEFORE viewing the movie, thus avoiding bad movies. As a result,
+user rankings are going to be skewed toward the higher end of any scale. This
+is the impetus for using a 10-star system instead of 5-stars; it provides
+more resolution in the "over-used" high-end of the ranking system. I suspect
+this phenemenon is not AS pronounced for critic reviews since they tend to
+review most movies that are released. There is still, however, some degree (one
+would hope!) of self-selection within the movie industry itself, so I would
+still expect to see some skewing for the rankings (i.e. really bad movies
+rarely see the light of day).
+
+-Durwood Gafford
+

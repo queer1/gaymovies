@@ -1,0 +1,40 @@
+
+<b>Welcome to The Gay Movie List</b>
+
+This page provides a brief explanation of the website; it won't be
+shown to you again.  Here's what you can do on the website:
+
+MOVIE LIST PAGE...
+
+- Sort the list of movies on the main page by various ratings.
+- Change whether you're viewing a list of movies or small or large icons.
+- View movies by your status (seen, not-seen, etc.)
+- Select a facebook friend to view their ratings, status and comments 
+  for movies.
+- Click on IMDB and Rotten Tomato links to view more info about a movie
+  or to see the trailer.
+
+INDIVIDUAL MOVIE PAGE...  
+
+- CLICK ON A MOVIE ICON to see/set more information about the movie, 
+  including any comment your currently selected friend has added.
+- When viewing a single movie's information, switch to 'rate' mode to...
+    1) add your own rating to a movie 
+    2) change its status (whether you've seen or want to see it) 
+    3) add a brief comment about the movie. (250 characters or less)
+- Click on the Amazon button to purchase the movie from amazon.com.
+- Click on IMDB and Rotten Tomato links to view more info about a movie
+  or to see the trailer.
+
+It is hoped that the site will inspire you to view more movies and 
+share them with all of us via the site. This is just the beta version 
+of the site. In the future, it will be cleaned up to look better and 
+there will be QUITE A FEW OTHER FEATURES ADDED. 
+
+More questions? Select the FAQ/Help menu option for more information,
+or drop me an email at gaymovielist@gmail.com.
+
+-Durwood
+
+
+

@@ -1,0 +1,18 @@
+
+To retrieve all movies and their user ratings for a single user:
+
+select * from movie left join user_movie on movie.movie_id=user_movie.movie_id and uid=2;
+
+To add user info to the query (e.g. username - shouldn't really need this) ...
+
+select * from movie left join user_movie on movie.movie_id=user_movie.movie_id and uid=2 left join user on user.uid=user_movie.uid;
+
+To retrieve all movies for single user and then a friend's rating:
+
+select movie.movie_id,title,u1.stars as mine,u2.stars as friends from movie 
+left join user_movie as u1 on movie.movie_id=u1.movie_id and u1.uid=1 
+left join user_movie as u2 on movie.movie_id=u2.movie_id and u2.uid=2;
+
+
+
+

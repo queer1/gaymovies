@@ -1,0 +1,11 @@
+use gay_movies;
+drop table if exists activity;
+CREATE TABLE IF NOT EXISTS activity (
+   activity_id  INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+   uid          INT UNSIGNED,
+   movie_id     INT UNSIGNED,
+   new_rating   TINYINT(2) DEFAULT 0,
+   activity     set('add_new', 'rate', 'watch', 'want_to_see'),
+   created      TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+

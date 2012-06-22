@@ -1,0 +1,45 @@
+use test;
+drop table if exists movie;
+drop table if exists user;
+drop table if exists user_movie;
+CREATE TABLE IF NOT EXISTS user (
+   uid INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+   username VARCHAR(20) 
+);
+INSERT INTO user (username) VALUES
+  ("alex"),
+  ("dwood");
+
+CREATE TABLE IF NOT EXISTS movie (
+   movie_id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+   title VARCHAR(20)
+);
+
+INSERT INTO movie (title) VALUES
+  ("alex_rated"),
+  ("alex_null_rated"),
+  ("dwood_rated"),
+  ("dwood_null_rated"),
+  ("alex_and_dwood_rated"),
+  ("alex_and_dwood_null_rated"),
+  ("not rated");
+
+CREATE TABLE IF NOT EXISTS user_movie (
+   user_movie_id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+   movie_id INT UNSIGNED,
+   uid INT UNSIGNED,
+   stars INT UNSIGNED
+);
+
+INSERT INTO user_movie (uid,movie_id,stars) VALUES
+  (1,1,10),
+  (2,3,10),
+  (1,5,10),
+  (2,5,10);
+
+INSERT INTO user_movie (uid,movie_id) VALUES
+  (1,2),
+  (2,4),
+  (1,6),
+  (2,6);
+

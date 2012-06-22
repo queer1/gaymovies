@@ -1,0 +1,41 @@
+use gay_movies;
+CREATE TABLE IF NOT EXISTS user (
+   username VARCHAR(255) NOT NULL PRIMARY KEY,
+   password VARCHAR(255),
+   access   set('edit', 'rate', 'browse')
+);
+INSERT INTO user (username, password, access) VALUES
+  ("josh",      "irwin",     "browse"),
+  ("shaun",     "ray",       "browse"),
+  ("james",     "gallegos",  "browse"),
+  ("jacob",     "kostelnik", "rate"),
+  ("alexandre", "clement",   "rate"),
+  ("durwood",   "gafford",   "edit");
+
+CREATE TABLE IF NOT EXISTS movie (
+   movie_id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+   title VARCHAR(255),
+   created TIMESTAMP DEFAULT '0000-00-00 00:00:00',
+   updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+   year INT UNSIGNED,
+   language enum('spanish','french','japanese','german','chinese','danish','italian'),
+   art VARCHAR(255),
+   trailer_url VARCHAR(255),
+   imdb_url VARCHAR(255),
+   rotten_url VARCHAR(255),
+   imdb_rating FLOAT(3,1) DEFAULT -1,
+   rotten_rating FLOAT(3,0) DEFAULT -1,
+   alex_rating TINYINT(2) DEFAULT -1,
+   durwood_rating TINYINT(2) DEFAULT -1,
+   alex_status enum('not_seen', 'seen', 'not_interested', 'want_to_see') DEFAULT 'not_seen',
+   durwood_status enum('not_seen', 'seen', 'not_interested', 'want_to_see') DEFAULT 'not_seen'
+   combo_rating FLOAT(3,1) DEFAULT -1,
+   mesh_rating unsigned integer,
+   mesh_count unsigned integer,
+   netflix_rating FLOAT(2,1),
+   netflix_url VARCHAR(255),
+   amazon_dvd_url VARCHAR(255),
+   amazon_bluray_url VARCHAR(255),
+   alt_title VARCHAR(255),
+);
+

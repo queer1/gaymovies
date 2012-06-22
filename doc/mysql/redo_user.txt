@@ -1,0 +1,22 @@
+use gay_movies;
+drop table if exists user;
+CREATE TABLE IF NOT EXISTS user (
+   uid          INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+   username     VARCHAR(255),
+   password     VARCHAR(255),
+   access       set('browse', 'rate', 'edit', 'admin'),
+   fb_userid    BIGINT UNSIGNED,
+   fb_firstname VARCHAR(255),
+   fb_lastname  VARCHAR(255),
+   created      TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   last_login   TIMESTAMP DEFAULT '0000-00-00 00:00:00' 
+);
+INSERT INTO user (username, password, fb_firstname, fb_lastname, access, created) VALUES
+  ("josh",      "irwin",    "Josh",      "Irwin",    "browse", "20110102"),
+  ("james",     "gallegos", "James",     "Gallegos", "browse", "20110102"),
+  ("alexandre", "clement",  "Alexandre", "Clement",  "rate",   "20101230"),
+  ("durwood",   "gafford",  "Durwood",   "Gafford",  "admin",  "20101230");
+INSERT INTO user (username, password, access, created) VALUES
+  ("shaun",     "ray",       "browse", "20110102"),
+  ("jacob",     "kostelnik", "browse", "20110102");
+

@@ -1,0 +1,10 @@
+
+To select all movies w/o any user-specific fields:
+
+SELECT movie_id,title from movie;
+
+To add user-specific ratings
+
+SELECT movie.movie_id,uid,title,one_to_ten from movie,user,user_movie where user.uid=3 and movie.movie_id = user_movie.movie_id and user.uid = user_movie.userid;
+
+

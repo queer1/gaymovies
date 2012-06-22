@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /images/100
+Disallow: /images/200
+Disallow: /images/300
+Disallow: /images/400
+Disallow: /tos.html
+

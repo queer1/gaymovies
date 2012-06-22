@@ -1,0 +1,25 @@
+
+Rollout...
+
+ - Have fun - only implement ideas that make it useful to me
+ - Guard inellectual property rights to the idea from the outset
+ - Register potential website names upfront
+ - Logo / typeface design
+ - Longterm vision .. facebook app, iphone app, website
+ - How to leverage the idea to make some money? click thru ads, sell movies?
+ - Initially do tests on gay movie ratings with friends
+ - Use SIFF or SLGFF for initial public rollout?
+
+Intellectual Property Protection...
+
+ - Application of ELO algorithm (how provisional ratings are handled, scoring,
+   ability to detect cheaters, ability to predict movie likes/dislikes) will
+   be treated as a trade secret and not disclosed.
+ - All software will be copyrighted and not shared with anyone initially.
+ - Consideration will be made to applying for patents for gayFilmMesh,
+   filmMesh and bookMesh.
+
+-Durwood Gafford, 1/15/2011
+
+
+

@@ -1,0 +1,13 @@
+use gay_movies;
+drop table if exists user_movie;
+CREATE TABLE IF NOT EXISTS user_movie (
+   user_movie_id  INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+   user_id        INT UNSIGNED DEFAULT 0,
+   movie_id       INT UNSIGNED DEFAULT 0,
+   status         enum('not_seen', 'seen', 'not_interested', 'want_to_see') DEFAULT 'not_seen',
+   one_to_ten     TINYINT(2) DEFAULT 0,
+   mesh_rating    INT UNSIGNED,
+   mesh_count     INT UNSIGNED
+);
+
+

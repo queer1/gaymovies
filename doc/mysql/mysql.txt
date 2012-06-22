@@ -1,0 +1,49 @@
+
+Create database and give access:
+create database gay_movies
+grant ALL on gay_movies.* to 'durwood'@'localhost' identified by 'laika';
+
+
+Add a genre:
+alter table movie change genre genre
+set('gay','tv_series','music','documentary','comedy','drama','concert','musical','action','indie','sci-fi','thriller','horror','crime','war','x-rated','new');
+
+
+Add a column:
+ALTER TABLE movie ADD COLUMN combo_rating FLOAT(3,1) DEFAULT -1;
+ALTER TABLE user ADD COLUMN created TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+ALTER TABLE user ADD COLUMN last_login TIMESTAMP DEFAULT NULL;
+
+To add new status enum:
+ alter table movie change status status
+enum('own','sold','lost','stolen','on_order','want','on_loan');
+
+To get list of movie_ids and their associated actors (or directors):
+
+select movie_actor.movie_id, movie_actor.person_id, person.fullname 
+from movie_actor,person 
+where (movie_actor.person_id = person.person_id);
+
+To get movie a list of all movies and their associated actors (or directors):
+
+select movie.movie_id, movie.title, person.person_id, person.fullname 
+from movie, person, movie_actor 
+where movie_actor.movie_id = movie.movie_id AND 
+      movie_actor.person_id = person.person_id;
+
+To get list of movie_ids for a given actor (or director):
+
+select movie_actor.movie_id, movie_actor.person_id, person.fullname 
+from movie_actor,person 
+where (movie_actor.person_id = person.person_id);
+
+
+To add a new store:
+
+insert into store set fullname="Three Dollar Cinema Auction";
+
+To add new user with special access:
+
+insert into user set username="william",password="gaskins",access="bootleg,x-rated";
+
+

@@ -1,0 +1,373 @@
+
+/*
+menu_navcontainer based on
+http://css.maxdesign.com.au/listamatic/horizontal16.htm (centered)
+and 
+http://css.maxdesign.com.au/listamatic/horizontal03.htm (left)
+*/
+
+#menu_navcontainer ul
+{
+/* TO THE LEFT
+padding-left: 0;
+margin-left: 0;
+background-color: #036;
+color: White;
+float: left;
+width: 100%;
+font-family: arial, helvetica, sans-serif;
+*/
+
+/* CENTERED... */
+padding: .2em 0;
+margin: 0;
+list-style-type: none;
+background-color: #036;
+color: #FFF;
+width: 100%;
+font: normal 90% arial, helvetica, sans-serif;
+text-align: center;
+}
+
+#menu_navcontainer ul li { display: inline; }
+
+#menu_navcontainer ul li a
+{
+padding: 0.2em 1em;
+background-color: #036;
+color: White;
+text-decoration: none;
+/* left
+float: left;
+*/
+border-right: 1px solid #fff;
+}
+
+#menu_navcontainer ul li a:hover
+{
+background-color: #369;
+color: #fff;
+}
+
+/* Navlist based on...
+ * http://css.maxdesign.com.au/listamatic/horizontal05.htm
+ */
+
+#navlist
+{
+padding: 3px 0;
+margin-left: 0;
+border-bottom: 1px solid #778;
+font: bold 12px Verdana, sans-serif;
+}
+
+#navlist li
+{
+list-style: none;
+margin: 0;
+display: inline;
+}
+
+#navlist li#right_text
+{
+  float: right;
+}
+
+#navlist li a
+{
+padding: 3px 0.5em;
+margin-left: 3px;
+border: 1px solid #778;
+border-bottom: none;
+background: #DDE;
+text-decoration: none;
+}
+
+#navlist li a:link { color: #448; }
+#navlist li a:visited { color: #667; }
+
+#navlist li a:hover
+{
+color: #000;
+background: #AAE;
+border-color: #227;
+}
+
+#navlist li a#current
+{
+background: white;
+border-bottom: 1px solid white;
+}
+
+#navlist li a#inactive
+{
+color: #aaa;
+background: white;
+border-color: #aaa;
+}
+
+  .clear {
+    clear: both;
+  }
+
+  .center_text {
+    text-align: center;
+  }
+
+  div.left_column
+  {
+    float: left;
+    border: 4px solid #ffffff;
+  }
+
+  div.right_column
+  {
+    float: right;
+    border: 4px solid #ffffff;
+  }
+
+  div.main_column
+  {
+    border: 4px solid #ffffff;
+  }
+
+  div.movie_cover
+  {
+  vertical-align: middle;
+  text-align: center;
+  float: left;
+  border: 1px solid #ffffff;
+  }
+
+  div.movie_cover p
+  {
+  font-size: small;
+  text-align: center;
+  }
+
+  div.controls
+  {
+  float: bottom;
+  border: 4px solid #ffffff;
+  }
+
+  div.fbook
+  {
+    border: 1px solid #ffffff;
+    min-height: 25px;
+  }
+
+  div.movie_title
+  {
+    /* vertical-align: middle; */
+    /* padding-top: 5px; */
+    text-align: left;
+    margin: 0 auto;
+    border: 1px solid #ffffff;
+  }
+
+  div#container
+  {
+  text-align: center;
+  margin-left: 5%;
+  margin-right: 5%;
+  border: 2px solid #ffffff;
+  font: 12px Verdana, sans-serif;
+
+  min-height: 100%;
+  height: auto;
+  height: 100%;
+  margin-top: 0 auto -4em;
+  margin-bottom: 0 auto -4em;
+  }
+
+/* Footer setup from:
+    http://ryanfait.com/resources/footer-stick-to-bottom-of-page/ 
+*/
+  .footer, .push {
+    color:#448; 
+    text-decoration:none;
+    font: 12px Verdana, sans-serif;
+    text-align: center;
+    clear: both;
+    height: 4em;
+  }
+
+  div.centered
+  {
+  text-align: center;
+  border: 2px solid #ffffff;
+  }
+
+  div.lefty
+  {
+  text-align: left;
+  border: 2px solid #ffffff;
+  }
+
+  div.like
+  {
+  float: left;
+  text-align: left;
+  border: 2px solid #ffffff;
+  height: 60px;
+  width: 400px;
+  }
+
+  div.tip  
+  {
+    clear: both;
+    padding: 3px;
+    /* height: 20px; */
+    color: #666;
+    background: #DDE;
+    text-align:center;
+    font: bold 12px Verdana, sans-serif;
+  }
+  span.menu {text-align:left}
+  span.menu_bold {text-align: left; font-weight:bold}
+  span.title {text-align:center; font-weight:bold; font-size: medium }
+
+  iframe
+  {
+    float: left;
+    text-align: center;
+  }
+
+  blockquote
+  {
+    text-indent: 25px;
+    position: relative;
+    margin-left: 15;
+    font-size: small;
+  }
+  
+  div.activity
+  {
+    text-indent: 25px;
+  }
+
+  p.comment_author
+  {
+    color: #000;
+    font-size: small;
+    font-weight: normal;
+    font-style: normal;
+    text-transform: capitalize;
+    margin-bottom: 0;
+    border: 0px solid #00ffff;
+  }
+  p.comment
+  {
+    color: #000;
+    font-size: small;
+    font-weight: lighter;
+    font-style: italic;
+    text-transform: none;
+    margin-top: 0;
+    border: 0px solid #00ffff;
+  }
+  p.comment_author + p.comment
+  {
+    text-indent: 25px;
+  }
+
+  p.activity_comment
+  {
+    color: #000;
+    font-size: x-small;
+    font-weight: lighter;
+    font-style: italic;
+    text-transform: none;
+    text-indent: 25px;
+    margin-top: 0;
+    margin-bottom: 0;
+    border: 0px solid #00ffff;
+  }
+
+  h1,h2,h3
+  {
+  float: left;
+  font-family: arial, 'sans serif'; 
+  margin-left: auto;
+  margin-right: auto;
+  }
+
+  h2
+  {
+  font-style: italic;
+  font-size: small;
+  }
+
+  p,li,address
+  {
+  font-family: arial, 'sans serif';
+  margin-left: 15pt;
+  }
+
+  table
+  {
+  font-family: arial, 'sans serif';
+  margin-left: auto;
+  margin-right: auto;
+  }
+
+  p,li,th,td
+  {
+  font-size: 80%;
+  }
+
+  th {background-color:#FAEBD7}
+
+  body
+  {
+  background-color: #ffffff;
+  }
+
+  p,h1,h2,h3,hr 
+  {
+  /* color:saddlebrown;  */
+  color: #448;
+  }
+
+/*
+  a:link    {color:darkred; text-decoration:none}
+  a:visited {color:darkred; text-decoration:none}
+  a:active  {color:darkred; text-decoration:none}
+  a:hover   {color:darkred; text-decoration:none}
+*/
+
+  a:link    {color:#448; text-decoration:none}
+  a:visited {color:#448; text-decoration:none}
+  a:active  {color:#448; text-decoration:none}
+  a:hover   {color:#000; text-decoration:underline}
+
+  /* remove halo effect in firefox   */
+  a:active {
+    outline: none;
+  }
+
+  /* add 100 px to height for text */
+  .tiny   { width:100px; height:140px; font-size: x-small;} 
+  .small  { width:125px; height:180px; font-size: x-small;} /* compact view-mode, 100px high */
+  .medium { width:200px; height:300px; font-size: small; } /* large view-mode,   200px high */
+  /* .large  { width:400px; height:475px; font-size: small; } /* for edit/info,     400px high */
+  .large  { width:400px; font-size: small; } /* for edit/info,     400px high */
+  
+  div.movie_overlay
+  {
+    position: absolute;
+    text-align: left;
+    margin: 0 auto;
+    /* border: 3px solid #ffffff; */
+    font-weight: bold;
+    color: #111;
+  }
+  .small_olay { top  75px; left 100px; width: 50px; }
+  .medium_olay { top 125px; left 150px; width: 100px; }
+  .large_olay { top 225px; left 250px; width: 150px; }
+
+  .float_right { float: right; }
+
+  .pollspacer { margin-right: 9px; } 
+

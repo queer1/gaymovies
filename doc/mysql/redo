@@ -1,0 +1,3 @@
+mysql --user durwood --password=laika < destroy.txt
+mysql --user durwood --password=laika < create.txt
+mysql --user durwood --password=laika < add_movie.txt

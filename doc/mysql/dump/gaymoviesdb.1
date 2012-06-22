@@ -1,0 +1,88 @@
+-- MySQL dump 10.13  Distrib 5.1.41, for debian-linux-gnu (x86_64)
+--
+-- Host: localhost    Database: gay_movies
+-- ------------------------------------------------------
+-- Server version	5.1.41-3ubuntu12.8
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `movie`
+--
+
+DROP TABLE IF EXISTS `movie`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `movie` (
+  `movie_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) DEFAULT NULL,
+  `year` int(10) unsigned DEFAULT NULL,
+  `language` enum('spanish','french','japanese','german','chinese','danish','italian') DEFAULT NULL,
+  `art` varchar(255) DEFAULT NULL,
+  `trailer_url` varchar(255) DEFAULT NULL,
+  `imdb_url` varchar(255) DEFAULT NULL,
+  `rotten_url` varchar(255) DEFAULT NULL,
+  `imdb_rating` float(3,1) DEFAULT '-1.0',
+  `rotten_rating` float(3,0) DEFAULT '-1',
+  `alex_rating` tinyint(2) DEFAULT '-1',
+  `durwood_rating` tinyint(2) DEFAULT '-1',
+  `alex_status` enum('not_seen','seen','not_interested') DEFAULT 'not_seen',
+  `durwood_status` enum('not_seen','seen','not_interested') DEFAULT 'not_seen',
+  PRIMARY KEY (`movie_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=124 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `movie`
+--
+
+LOCK TABLES `movie` WRITE;
+/*!40000 ALTER TABLE `movie` DISABLE KEYS */;
+INSERT INTO `movie` VALUES (1,'Beautiful Thing',1996,NULL,'beautiful_thing_dvd.jpg','http://www.youtube.com/watch?v=_r3e_vMwH8s','http://www.imdb.com/title/tt0115640/combined','http://www.rottentomatoes.com/m/beautiful_thing/',7.6,90,-1,10,'seen','seen'),(2,'101 Rent Boys',NULL,NULL,'101_rent_boys_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,3,'not_seen','not_seen'),(3,'9 Dead Gay Guys',0,NULL,'9_dead_gay_guys_dvd.jpg','','http://www.imdb.com/title/tt0336910/combined','http://www.rottentomatoes.com/m/nine_dead_gay_guys/',6.4,-1,-1,7,'not_seen','seen'),(4,'Adam and Steve',0,NULL,'adam_and_steve_dvd.jpg','','http://www.imdb.com/title/tt0372122/combined','',5.7,-1,-1,-1,'not_seen','seen'),(5,'Adventures of Felix',NULL,NULL,'adventures_of_felix_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(6,'Adventures of Priscilla, Queen of the Desert',0,NULL,'adventures_of_priscilla_queen_of_the_desert_dvd.jpg','','http://www.imdb.com/title/tt0109045/combined','',7.3,-1,-1,8,'not_seen','seen'),(7,'Another Country',0,NULL,'another_country_dvd.jpg','','http://www.imdb.com/title/tt0086904/combined','',7.0,-1,-1,8,'not_seen','seen'),(8,'Another Gay Movie',0,NULL,'another_gay_movie_dvd.jpg','','http://www.imdb.com/title/tt0443431/combined','',5.0,-1,-1,5,'not_seen','seen'),(9,'Apartment Zero',0,NULL,'apartment_zero_dvd.jpg','','http://www.imdb.com/title/tt0094667/combined','',6.8,-1,-1,8,'not_seen','seen'),(10,'Art of Being Straight, The',NULL,NULL,'art_of_being_straight_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(11,'Bent',0,NULL,'bent_dvd.jpg','','http://www.imdb.com/title/tt0118698/combined','',7.1,-1,-1,9,'not_seen','seen'),(12,'Billy\'s Hollywood Screen Kiss',0,NULL,'billys_hollywood_screen_kiss_dvd.jpg','','http://www.imdb.com/title/tt0137386/combined','',6.9,-1,-1,-1,'not_seen','seen'),(13,'Birdcage, The',NULL,NULL,'birdcage_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,6,'not_seen','seen'),(14,'Blackmail Boy',NULL,NULL,'blackmail_boy_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(15,'Blossoming of Maximos Oliveros, The',NULL,NULL,'blossoming_of_maximos_oliveros_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(16,'Bound',NULL,NULL,'bound_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,7,'not_seen','seen'),(17,'Boyfriends',NULL,NULL,'boyfriends_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(18,'Boys in the Band, The',0,NULL,'boys_in_the_band_dvd.jpg','','http://www.imdb.com/title/tt0065488/combined','',7.5,-1,-1,7,'not_seen','seen'),(19,'Boys Life 2, A',NULL,NULL,'boys_life_2_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(20,'Boys Life 4, A',NULL,NULL,'boys_life_4_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(21,'Boys Life, A',NULL,NULL,'boys_life_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(22,'Boys on the Side',NULL,NULL,'boys_on_the_side_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(23,'Broadway Damage',NULL,NULL,'broadway_damage_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(24,'Brokeback Mountain',0,NULL,'brokeback_mountain_dvd.jpg','','http://www.imdb.com/title/tt0388795/combined','',7.8,-1,-1,8,'not_seen','seen'),(25,'Cage Aux Folles, La',0,NULL,'cage_aux_folles_dvd.jpg','','http://www.imdb.com/title/tt0077288/combined','',7.1,-1,-1,8,'not_seen','seen'),(26,'Celluloid Closet, The',0,NULL,'celluloid_closet_dvd.jpg','','http://www.imdb.com/title/tt0112651/combined','',7.6,-1,-1,9,'not_seen','seen'),(27,'Come Undone',NULL,NULL,'come_undone_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(28,'Confusion of Genders',NULL,NULL,'confusion_of_genders_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(29,'Cowboys and Angels',0,NULL,'cowboys_and_angels_dvd.jpg','','http://www.imdb.com/title/tt0377701/combined','',6.9,-1,-1,8,'not_seen','seen'),(30,'Cruising',0,NULL,'cruising_dvd.jpg','','http://www.imdb.com/title/tt0080569/combined','',6.1,-1,-1,7,'not_seen','seen'),(31,'Crying Game, The',0,NULL,'crying_game_dvd.jpg','','http://www.imdb.com/title/tt0104036/combined','',7.3,-1,-1,8,'not_seen','seen'),(32,'Dante\'s Cove - Season 1',NULL,NULL,'dantes_cove_season_1_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(33,'Dead Pool, The',NULL,NULL,'dead_pool_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(34,'Dirty Shame, A',NULL,NULL,'dirty_shame_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,7,'not_seen','seen'),(35,'Dog Day Afternoon',0,NULL,'dog_day_afternoon_dvd.jpg','','http://www.imdb.com/title/tt0072890/combined','',8.1,-1,-1,9,'not_seen','seen'),(36,'Dog Tags',2008,NULL,'dog_tags_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(37,'Down Under',NULL,NULL,'down_under_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(38,'Edge at Seventeen',0,NULL,'edge_at_seventeen_dvd.jpg','','http://www.imdb.com/title/tt0138414/combined','',6.3,-1,-1,9,'not_seen','seen'),(39,'Edward II',NULL,NULL,'edward_ii_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','seen'),(40,'El Mar',NULL,NULL,'el_mar_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(41,'F Est un Salaud',0,NULL,'f_est_un_salaud_dvd.jpg','','http://www.imdb.com/title/tt0166604/combined','',7.4,-1,-1,6,'not_seen','seen'),(42,'Fixing Frank',2002,NULL,'fixing_frank_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(43,'Flesh',NULL,NULL,'flesh_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(44,'Fluffer',NULL,NULL,'fluffer_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,3,'not_seen','not_seen'),(45,'Get Real',NULL,NULL,'get_real_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(46,'Gone But Not Forgotten',NULL,NULL,'gone_but_not_forgotten_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(47,'Green Plaid Shirt',NULL,NULL,'green_plaid_shirt_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(48,'Hairspray',2007,NULL,'hairspray_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,7,'not_seen','seen'),(49,'Harry and Max',0,NULL,'harry_and_max_dvd.jpg','','http://www.imdb.com/title/tt0390080/combined','',5.4,-1,-1,-1,'not_seen','seen'),(50,'Head On',1998,NULL,'head_on_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(51,'Hedwig and the Angry Inch',NULL,NULL,'hedwig_and_the_angry_inch_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,7,'not_seen','seen'),(52,'Hours',NULL,NULL,'hours_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(53,'In and Out',NULL,NULL,'in_and_out_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','seen'),(54,'Jeffrey',NULL,NULL,'jeffrey_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(55,'Johns',NULL,NULL,'johns_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(56,'Juste une Question d\'Amour',NULL,NULL,'juste_une_question_damour_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(57,'Kiss Me Guido',NULL,NULL,'kiss_me_guido_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','seen'),(58,'Laramie Project, The',NULL,NULL,'laramie_project_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(59,'Latter Days',NULL,NULL,'latter_days_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','seen'),(60,'Law of Desire',NULL,NULL,'law_of_desire_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,7,'not_seen','seen'),(61,'Leather Jacket Love Story',NULL,NULL,'leather_jacket_love_story_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(62,'Lie Down with Dogs',NULL,NULL,'lie_down_with_dogs_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(63,'Like It Is',NULL,NULL,'like_it_is_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(64,'Locked Up',NULL,NULL,'locked_up_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(65,'Loggerheads',NULL,NULL,'loggerheads_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(66,'Love! Valour! Compassion!',0,NULL,'love_valour_compassion_dvd.jpg','','','',-1.0,-1,-1,7,'not_seen','seen'),(67,'Luster',NULL,NULL,'luster_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(68,'Mandragora',NULL,NULL,'mandragora_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,8,'not_seen','seen'),(69,'Maurice',0,NULL,'maurice_dvd.jpg','','http://www.imdb.com/title/tt0093512/combined','',7.5,-1,-1,9,'not_seen','seen'),(70,'Men In The Nude',NULL,NULL,'men_in_the_nude_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(71,'Milk',0,NULL,'milk_dvd.jpg','','http://www.imdb.com/title/tt1013753/combined','',7.9,-1,-1,9,'not_seen','seen'),(72,'Midnight Cowboy',0,NULL,'midnight_cowboy_dvd.jpg','','http://www.imdb.com/title/tt0064665/combined','',8.0,-1,-1,9,'not_seen','seen'),(73,'More Tales of the City',NULL,NULL,'more_tales_of_the_city_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,8,'not_seen','seen'),(74,'My Beautiful Laundrette',0,NULL,'my_beautiful_laundrette_dvd.jpg','','','',-1.0,-1,-1,8,'not_seen','seen'),(75,'My Own Private Idaho',0,NULL,'my_own_private_idaho_dvd.jpg','','http://www.imdb.com/title/tt0102494/combined','',7.0,-1,-1,9,'not_seen','seen'),(76,'Mysterious Skin',NULL,NULL,'mysterious_skin_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,8,'not_seen','seen'),(77,'Naked Boys Singing',NULL,NULL,'naked_boys_singing_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,4,'not_seen','not_seen'),(78,'Nico and Dani',NULL,NULL,'nico_and_dani_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,7,'not_seen','seen'),(79,'No Night is Too Long',NULL,NULL,'no_night_is_too_long_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(80,'Object of My Affection, The',NULL,NULL,'object_of_my_affection_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(81,'Online',NULL,NULL,'online_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(82,'On the Bus',NULL,NULL,'on_the_bus_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,6,'not_seen','seen'),(83,'Opposite of Sex, The',NULL,NULL,'opposite_of_sex_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(84,'Paris Is Burning',NULL,NULL,'paris_is_burning_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,6,'not_seen','seen'),(85,'Parting Glances',0,NULL,'parting_glances_dvd.jpg','','http://www.imdb.com/title/tt0091725/combined','',7.8,-1,-1,10,'not_seen','seen'),(86,'Philadelphia',0,NULL,'philadelphia_dvd.jpg','','http://www.imdb.com/title/tt0107818/combined','',7.6,-1,-1,8,'not_seen','seen'),(87,'PlanetOUT.com  -  1st Annual Short Movie Awards',NULL,NULL,'planetout_com_1st_annual_short_movie_awards_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(88,'Prayers for Bobby',NULL,NULL,'prayers_for_bobby_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(89,'Prick Up Your Ears',0,NULL,'prick_up_your_ears_dvd.jpg','','http://www.imdb.com/title/tt0093776/combined','',7.2,-1,-1,9,'not_seen','seen'),(90,'Queer as F**k - Bizarre Short Films',NULL,NULL,'queer_as_fk_bizarre_short_films_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(91,'Queer as Folk',NULL,NULL,'queer_as_folk_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','seen'),(92,'Richard III',NULL,NULL,'richard_iii_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(93,'Rocky Horror Picture Show, The',NULL,NULL,'rocky_horror_picture_show_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,7,'not_seen','seen'),(94,'Rope',0,NULL,'rope_dvd.jpg','','http://www.imdb.com/title/tt0040746/combined','',8.1,-1,-1,9,'not_seen','seen'),(95,'Sex Is ...',NULL,NULL,'sex_is_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(96,'Shelter',0,NULL,'shelter_dvd.jpg','','http://www.imdb.com/title/tt0942384/combined','',7.8,-1,-1,9,'not_seen','seen'),(97,'Shiner',NULL,NULL,'shiner_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(98,'Shortbus',NULL,NULL,'shortbus_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,7,'not_seen','seen'),(99,'Sick',NULL,NULL,'sick_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(100,'Skull and Bones',NULL,NULL,'skull_and_bones_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(101,'Sordid Lives',0,NULL,'sordid_lives_dvd.jpg','','http://www.imdb.com/title/tt0204640/combined','',6.7,-1,-1,8,'not_seen','seen'),(102,'Sordid',NULL,NULL,'sordid_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(103,'Strawberry and Chocolate',NULL,NULL,'strawberry_and_chocolate_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(104,'Sum of Us, The',NULL,NULL,'sum_of_us_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(105,'Surrender Dorothy',NULL,NULL,'surrender_dorothy_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(106,'Swellegent Ellegance',NULL,NULL,'swellegent_ellegance_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(107,'Swoon',0,NULL,'swoon_dvd.jpg','','http://www.imdb.com/title/tt0105508/combined','',6.8,-1,-1,10,'not_seen','seen'),(108,'Three Dancing Slaves',NULL,NULL,'three_dancing_slaves_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(109,'Threesome',NULL,NULL,'threesome_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','seen'),(110,'Times of Harvey Milk, The',0,NULL,'times_of_harvey_milk_dvd.jpg','','http://www.imdb.com/title/tt0088275/combined','',8.4,-1,-1,10,'not_seen','seen'),(111,'To Die For',NULL,NULL,'to_die_for_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(112,'Tootsie',NULL,NULL,'tootsie_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,7,'not_seen','seen'),(113,'Torch Song Triology',NULL,NULL,'torch_song_triology_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,9,'not_seen','seen'),(114,'Transamerica',0,NULL,'transamerica_dvd.jpg','','http://www.imdb.com/title/tt0407265/combined','',7.5,-1,-1,9,'not_seen','seen'),(115,'Trick',NULL,NULL,'trick_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(116,'United States of Leland, The',NULL,NULL,'united_states_of_leland_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(117,'Urbania',NULL,NULL,'urbania_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,8,'not_seen','seen'),(118,'Victor Victoria',NULL,NULL,'victor_victoria_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,8,'not_seen','seen'),(119,'Wedding Banquet, The',NULL,NULL,'wedding_banquet_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,7,'not_seen','seen'),(120,'Wild Reeds',NULL,NULL,'wild_reeds_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(121,'Wolves of Kromer, The',NULL,NULL,'wolves_of_kromer_dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen'),(122,'Yossi and Jagger',0,NULL,'yossi_and_jagger_dvd.jpg','','http://www.imdb.com/title/tt0334754/combined','',7.4,-1,-1,8,'not_seen','seen'),(123,'You Only Live Twice',NULL,NULL,'you_only_live_twice__dvd.jpg',NULL,NULL,NULL,-1.0,-1,-1,-1,'not_seen','not_seen');
+/*!40000 ALTER TABLE `movie` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user` (
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `access` set('edit') DEFAULT NULL,
+  PRIMARY KEY (`username`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user`
+--
+
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES ('alexandre','clement','edit'),('durwood','gafford','edit');
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2011-01-01  3:34:30
