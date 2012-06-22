@@ -9,7 +9,10 @@ margin-top: 1px;
 margin-bottom: 0;
 font: bold 12px Verdana;
 list-style-type: none;
-text-align: left; /*set to left, center, or right to align the menu as desired*/
+text-align: center; /*set to left, center, or right to align the menu as desired*/
+background-color: #036;
+color: #fff;
+width: 100%;
 }
 
 .bluetabs li{
@@ -19,15 +22,20 @@ margin: 0;
 
 .bluetabs li a{
 text-decoration: none;
-padding: 3px 7px;
-margin-right: 3px;
-border: 1px solid #778;
-color: #2d2b2b;
+padding: 3px 25px;
+/*margin-right: 3px;*/
+margin-right: 0px;
+/* border: 1px solid #778; */
+/*color: #2d2b2b;
 background: white url(media/bluetab.gif) top left repeat-x; /*THEME CHANGE HERE*/
+background-color: #036;         /* Background Color of navmenu */
+color: #fff;                    /* Color of main menu text */
+/* border-right: 1px solid #fff;   /* Color of bars between text */
+/* border-left:  1px solid #fff;   /* Color of bars between text */
 }
 
 .bluetabs li a:visited{
-color: #2d2b2b;
+/*color: #2d2b2b;*/
 }
 
 .bluetabs li a:hover{
@@ -40,6 +48,7 @@ color: #2d2b2b;
 
 .bluetabs li.selected a{ /*selected main tab style */
 background-image: url(media/bluetabactive.gif); /*THEME CHANGE HERE*/
+color: #2d2b2b;
 border-bottom-color: white;
 }
 
@@ -60,6 +69,7 @@ z-index:100;
 background-color: white;
 width: 200px;
 visibility: hidden;
+text-align: left;
 }
 
 
