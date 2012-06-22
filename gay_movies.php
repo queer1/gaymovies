@@ -55,7 +55,8 @@
 // v4.43  -- Auto update of site image
 // v4.44  -- Minor updates / cleanup
 // v5.00  -- Updated Facebook login to be compatible with latest FB API
-  $version = "v5.00";
+// v5.01  -- Support new location of movie image files and website images
+  $version = "v5.01";
 
   $php_self = $_SERVER['PHP_SELF'];
 
