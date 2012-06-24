@@ -1685,7 +1685,7 @@ function display_amazon_buy_button($dvd_url, $bluray_url)
   if (isset($dvd_url) && $dvd_url != "")
   {
     display_link("$dvd_url", "Buy DVD on Amazon.com", 
-                 "/media/amazon_120x42_gold.gif");
+                 "media/amazon_120x42_gold.gif");
   }
 }
 
@@ -1694,7 +1694,7 @@ function display_scarecrow_button($url)
   if (isset($url) && $url != "")
   {
     display_link("$url", "Available at Scarecrow Video, Seattle",
-                 "/media/scarecrow_logo.jpg");
+                 "media/scarecrow_logo.jpg");
   }
 }
 
@@ -1707,7 +1707,7 @@ function display_siff_button($url, $small=0)
     else
       display_link("$url", 
             "Official Selection, 2011 Seattle International Film Festival",
-            "/media/SIFF-Fest_RGB.jpg");
+            "media/SIFF-Fest_RGB.jpg");
   }
 }
 
@@ -1850,7 +1850,7 @@ function display_menu()
     print("<div class=\"lefty\">");
     display_link("http://www.siff.net/festival/index.aspx",
        "Now featuring films from 2011 Seattle International Film Festival, May 19 - June 12",
-       "/media/SIFF-Fest_RGB.jpg");
+       "media/SIFF-Fest_RGB.jpg");
     print("</div>\n");
     print("\n");
 
@@ -3669,7 +3669,7 @@ function resize_image($src, $src_height, $src_width,
 
   $s = $dest_width . "x" . $dest_height;
 
-  umask(0007);  // Create file as -rw-rw----
+  // umask(0007);  // Create file as -rw-rw----
   $command = "$convert_path -size $s \"$src\" -resize $s +profile '*' \"$dest\"";
   if ($debug)
     print("Resizing Image: $command<br>\n");
@@ -3677,6 +3677,7 @@ function resize_image($src, $src_height, $src_width,
   system($command, $stat);
   if (($stat != 0) && $gOpt['debug'])
     print ("resize_image: Cannot resize image with:\n<br/>$command\n<br/>");
+  chmod($dest, 0664);  // Change file to -rw-rw-r--
   return $stat;
 }
 
