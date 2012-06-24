@@ -79,26 +79,16 @@ SITE_DESC;
 
   $no_help = true;
 
-  // Init global variables to keep track of ranges of values
-  // (used in calculating combo rating))
-  $min_imdb    = 100;
-  $max_imdb    =  -1;
-  $min_durwood = 100;
-  $max_durwood =  -1;
-  $min_alex    = 100;
-  $max_alex    =  -1;
+  // Init global variable to keep track of whether ranges have been
+  // calculated
   $ranges_calculated = false;
-
 
   // Set the icon and cover image heights
   $allow_facebook_login = true;
   define('FACEBOOK_APP_ID', '122327374503892');
   define('FACEBOOK_SECRET', '5a7c4b508c5530cda1f875d28bc558ba');
-  define('ALEX_FB_UID', '572148635');
   define('DURWOOD_FB_UID', '1184847479');
-  define('ALEX_UID', '3');
   define('DURWOOD_UID', '4');
-  define('ALEX_USERNAME', 'Alexandre');
   define('DURWOOD_USERNAME', 'Durwood');
 
   require '/var/www/durwood/facebook-php-sdk/src/facebook.php';
@@ -130,7 +120,6 @@ SITE_DESC;
   if (isset($_REQUEST['reset']))
   {
     unset($_SESSION);
-    unset($fbSession);
   }
 
   if (isset($_REQUEST['debug']))
@@ -151,6 +140,9 @@ SITE_DESC;
     return;
 
   display_doctype("Frameset");
+
+  //ob_start('ob_gzhandler');
+  ob_start();
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml"
@@ -167,7 +159,6 @@ SITE_DESC;
 <head>
 
 <?php
-
 
 print("<title>$site_title</title>\n");
 display_meta_name("title", $site_title);
@@ -189,11 +180,10 @@ display_fbook_meta_data(isset($_REQUEST['movie_id']) ? $_REQUEST['movie_id'] : 0
 <script>
   window.fbAsyncInit = function() {
     FB.init({
-      appId : '<?php echo $facebook->getAppId(); ?>',
-      session : <?php echo json_encode($fbSession); ?>,
+      appId  : '<?php echo $facebook->getAppId(); ?>', 
       status : true, // check login status
       cookie : true, // enable cookies to allow the server to access the session
-      xfbml : true // parse XFBML
+      xfbml  : true  // parse XFBML
     });
 
     // whenever the user logs in, we refresh the page
@@ -340,6 +330,8 @@ display_donate_button();
 </html>
 
 <?php
+
+ob_end_flush();
 
 function allow_admin()
 {
@@ -1756,10 +1748,10 @@ function display_movie_recommendation_text($values)
   print("  <br/>\n");
   print("  <br/>\n");
 
-  display_rating("Combo",           $combo_rating   );
-  display_rating("IMDB",            $imdb_rating,   $imdb_url);
-  display_rating("TomatoMeter",     $rotten_rating, $rotten_url);
-  display_rating("Flixster",         $flixster_rating, $flixster_url);
+  display_rating("Combo",        $combo_rating     );
+  display_rating("IMDB",         $imdb_rating,     $imdb_url);
+  display_rating("TomatoMeter",  $rotten_rating,   $rotten_url);
+  display_rating("Flixster",     $flixster_rating, $flixster_url);
   if ($_SESSION['logged_in'])
   {
     if (isset($my_name))
@@ -2815,8 +2807,6 @@ function update_all_combo_ratings()
 
   $imdb_min    = 100.0;
   $imdb_max    =  -1.0;
-  $alex_min    = 100.0;
-  $alex_max    =  -1.0;
 
   while ($row = mysql_fetch_array($movie_list_result))
   {
@@ -2913,10 +2903,6 @@ function update_all_combo_ratings()
     }
   }
   mysql_free_result($result);
-
-  //print("IMDB    Range: $imdb_min,    $imdb_max<br/>\n");
-  //print("Alex    Range: $alex_min,    $alex_max<br/>\n");
-  //print("Durwood Range: $durwood_min, $durwood_max<br/>\n");
 
   // Reset result counter on original movie list and update each combo rating
   mysql_data_seek($movie_list_result, 0);
@@ -3094,8 +3080,8 @@ function update_movie_info($entry)
   $imdb_rating       = $entry['imdb_rating'];
   $rotten_url        = $entry['rotten_url'];
   $rotten_rating     = $entry['rotten_rating'];
-  $flixster_url       = $entry['flixster_url'];
-  $flixster_rating    = $entry['flixster_rating'];
+  $flixster_url      = $entry['flixster_url'];
+  $flixster_rating   = $entry['flixster_rating'];
   $tla_url           = $entry['tla_url'];
   $amazon_dvd_url    = $entry['amazon_dvd_url'];
   $amazon_bluray_url = $entry['amazon_bluray_url'];
@@ -3200,24 +3186,6 @@ function update_movie_info($entry)
   }
 
   return($movie_id);
-}
-
-function is_durwood_logged_in()
-{
-  if ( ($_SESSION['logged_in'] == true)
-    && ($_SESSION['fb_uid'] == DURWOOD_FB_UID))
-    return true;
-  else
-    return false;
-}
-
-function is_alex_logged_in()
-{
-  if ( ($_SESSION['logged_in'] == true)
-    && ($_SESSION['fb_uid'] == ALEX_FB_UID))
-    return true;
-  else
-    return false;
 }
 
 function is_new($row, $movie_id)
@@ -3388,18 +3356,6 @@ function get_user_firstname($uid)
     return "";
 }
   
-function get_user_rating($uid)
-{
-  $query = "SELECT one_to_ten from user WHERE user_id=$uid LIMIT 1";
-  if ($debug)
-    print("Running Query: $query<br>\n");
-  $result = mysql_query($query);
-  if ($result && ($row = mysql_fetch_array($result)))
-    return ($row['one_to_ten']);
-  else
-    return NULL;
-}
-
 function update_activity_add_comment_to_movie($uid, $movie_id, $rating=0)
 {
   if (($_SESSION['logged_in']    == false)
@@ -4537,7 +4493,6 @@ function display_array($array, $heading)
   print_r($array);
   print("<br/>\n");
 }
-
 
 function is_mobile()
 {
